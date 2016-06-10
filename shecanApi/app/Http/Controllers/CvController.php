@@ -23,23 +23,18 @@ class CvController extends Controller
         return [
             'user_id' => $cv['user_id'],
             'personal_info' => [
-                $cv['name'],
-                $cv['age'],
+                $cv['personal_info']['name'],
+                $cv['personal_info']['age'],
             ],
             'contact_info' => [
-                $cv['mobile'],
-                $cv['address'],
+                $cv['contact_info']['mobile'],
+                $cv['contact_info']['address'],
             ],
             'education' => [
-                $cv['school'],
-                $cv['faculty']
+                $cv['education']['school'],
+                $cv['education']['faculty']
             ]
         ];
-    }
-
-    public function create()
-    {
-
     }
 
     public function store(Request $request)
@@ -58,16 +53,19 @@ class CvController extends Controller
             'school' => $request['school'],
             'faculty' => $request['faculty']
         );
-        $cv -> save();
+        $cv->save();
         return Response::json([
             'message' => 'Cv Created Successfully',
             'data' => $this->afterMake($cv)
         ]);
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-
+        CV::destroy($id);
+        return response::json([
+            'message' => 'Cv Has Been Deleted'
+        ], 200);
     }
 
     public function show($id)
@@ -83,13 +81,26 @@ class CvController extends Controller
         ], 200);
     }
 
-    public function update()
+    public function update($id, Request $request)
     {
+        $cv = Cv::find($id);
 
+        $cv['user_id'] = $request['user_id'];
+        $cv['personal_info.name'] = $request['name'];
+
+        $cv['personal_info.age'] = $request['age'];
+
+        $cv['contact_info.mobile'] = $request['mobile'];
+        $cv['contact_info.address'] = $request['address'];
+
+        $cv['education.school'] = $request['school'];
+        $cv['education.faculty'] = $request['faculty'];
+
+        $cv->save();
+
+        return Response::json([
+            'message' => 'Cv Updated Successfully'
+        ],200);
     }
 
-    public function edit()
-    {
-
-    }
 }
