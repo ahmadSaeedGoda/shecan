@@ -1,5 +1,4 @@
 @extends('layouts.app')
- 
 @section('content')
     <body id="home">
 
@@ -20,12 +19,12 @@
             </ul>
         </div>
         <!-- /.container -->
-        <div class="col-xs-12 text-center abcen wow fadeIn">
-            <div class="button_down ">
-                <a class="imgcircle wow bounceInUp" data-wow-duration="1.5s" href="#whatis">
-                    <img class="img_scroll" src="img/icon/circle.png" alt=""> </a>
-            </div>
-        </div>
+        {{--<div class="col-xs-12 text-center abcen wow fadeIn">--}}
+            {{--<div class="button_down ">--}}
+                {{--<a class="imgcircle wow bounceInUp" data-wow-duration="1.5s" href="#whatis">--}}
+                    {{--<img class="img_scroll" src="img/icon/circle.png" alt=""> </a>--}}
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 
     <!-- NavBar-->
@@ -322,23 +321,10 @@
                     <h2>Download Free</h2>
                     <p class="lead" style="margin-top:0">Use our IOS App</p>
                     <p><a class="btn btn-embossed btn-primary view" role="button">Apple Store</a></p>
-
-
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    You are logged in!
-
                 </div>
             </div>
         </div>
     </div>
-
 
 
     <footer>
@@ -380,7 +366,5 @@
             </div>
         </div>
     </footer>
-
-</div>
 
 @endsection

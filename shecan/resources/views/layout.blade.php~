@@ -12,16 +12,16 @@
     <title>Starter Template</title>
 
     <!-- Bootstrap core CSS -->
-<<<<<<< HEAD
+ 
     <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="{{ URL::asset('css/bootstrap.css')}}" rel="stylesheet">
         <link href="{{ URL::asset('css/clean-blog.min.css')}}" rel="stylesheet">
         <link href="{{ URL::asset('css/clean-blog.css')}}" rel="stylesheet">
         <link  href="{{ URL::asset('css/fontawesomecss/font-awesome.min.css')}}" rel="stylesheet">
-=======
+ 
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
 
->>>>>>> 0b684794c3b1e9437d55bf1e269ad411940b4a7e
+ 
     <!-- Custom styles for this template -->
     <!-- <link href="starter-template.css" rel="stylesheet"> -->
 
@@ -31,7 +31,9 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     @yield('css')
+
 </head>
 
 <body>
