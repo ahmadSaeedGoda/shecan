@@ -1,5 +1,5 @@
 @extends('layouts.app')
- 
+<<<<<<< HEAD
 @section('content')
     <body id="home">
 
@@ -322,7 +322,7 @@
                     <h2>Download Free</h2>
                     <p class="lead" style="margin-top:0">Use our IOS App</p>
                     <p><a class="btn btn-embossed btn-primary view" role="button">Apple Store</a></p>
-
+=======
 
 @section('content')
 <div class="container">
@@ -333,12 +333,12 @@
 
                 <div class="panel-body">
                     You are logged in!
-
+>>>>>>> 0b684794c3b1e9437d55bf1e269ad411940b4a7e
                 </div>
             </div>
         </div>
     </div>
-
+<<<<<<< HEAD
 
 
     <footer>
@@ -381,6 +381,7 @@
         </div>
     </footer>
 
+=======
 </div>
-
+>>>>>>> 0b684794c3b1e9437d55bf1e269ad411940b4a7e
 @endsection

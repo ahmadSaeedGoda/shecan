@@ -155,6 +155,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        "Laralib\L5scaffold\GeneratorsServiceProvider", //to install scaffold
+        //add to make mail verification
+        Krucas\LaravelUserEmailVerification\UserEmailVerificationServiceProvider::class
 
     ],
 

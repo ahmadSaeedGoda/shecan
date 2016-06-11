@@ -16,6 +16,8 @@ return [
     |
     */
 
+
+
     'driver' => env('MAIL_DRIVER', 'smtp'),
 
     /*
@@ -29,7 +31,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'smtp.mail.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +57,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => 'project.rails5@gmail.com', 'name' => 'she can'],
 
     /*
     |--------------------------------------------------------------------------

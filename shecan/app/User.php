@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Krucas\LaravelUserEmailVerification\Contracts\RequiresEmailVerification as RequiresEmailVerificationContract;
+use Krucas\LaravelUserEmailVerification\RequiresEmailVerification;
 
-class User extends Authenticatable
-{
+class User extends Authenticatable implements CanResetPasswordContract , RequiresEmailVerificationContract  {
+    use  CanResetPassword ,RequiresEmailVerification;
     /**
      * The attributes that are mass assignable.
      *
