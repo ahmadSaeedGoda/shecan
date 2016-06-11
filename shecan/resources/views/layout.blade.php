@@ -12,8 +12,11 @@
     <title>Starter Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="{{ URL::asset('css/bootstrap.css')}}" rel="stylesheet">
+        <link href="{{ URL::asset('css/clean-blog.min.css')}}" rel="stylesheet">
+        <link href="{{ URL::asset('css/clean-blog.css')}}" rel="stylesheet">
+        <link  href="{{ URL::asset('css/fontawesomecss/font-awesome.min.css')}}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <!-- <link href="starter-template.css" rel="stylesheet"> -->
 

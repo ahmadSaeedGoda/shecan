@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::auth();
@@ -41,6 +41,7 @@ Route::get('verify/{token?}', [
     'uses' => 'Auth\VerifyController@verify',
     'as' => 'verification.verify',
 ]);
-Route::auth();
 
-Route::get('/home', 'HomeController@index');
+
+
+
