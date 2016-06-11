@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 Route::auth();
 Route::resource("industries","IndustryController");
+Route::get('admin/profile', ['middleware' => 'admin', function () {  
+    return 'admin';
+}]);
 
 Route::get('/home', 'HomeController@index');
 
@@ -38,3 +41,6 @@ Route::get('verify/{token?}', [
     'uses' => 'Auth\VerifyController@verify',
     'as' => 'verification.verify',
 ]);
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
