@@ -100,7 +100,15 @@ class CvController extends Controller
 
         return Response::json([
             'message' => 'Cv Updated Successfully'
-        ],200);
+        ], 200);
+    }
+
+    public function getByUser($id)
+    {
+        $cv = Cv::where('user_id', '=', $id)->get();
+        return response::json([
+            'message' => $cv
+        ], 200);
     }
 
 }

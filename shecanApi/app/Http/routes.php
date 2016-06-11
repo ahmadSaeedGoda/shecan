@@ -17,4 +17,5 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'api/v1'], function(){
     Route::resource('cvs', 'CvController');
+    Route::get('cvs/user/{cvs}','CvController@getByUser');
 });
