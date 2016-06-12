@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "38c51c34f48cc04021cf17fdb91c50eb",
-    "content-hash": "1263511dede45c6f89ef481bc9fef2ed",
+    "hash": "853835ee0d79977e3cbcc60029dfde42",
+    "content-hash": "b4db9c798d14a8aea9055880ba59d4d0",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -358,6 +358,49 @@
                 "tokenizer"
             ],
             "time": "2015-12-05 17:17:57"
+        },
+        {
+            "name": "laralib/l5scaffold",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laralib/l5scaffold.git",
+                "reference": "2c6741d4d9cb82216b386f33757b5c2ed2c2df07"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laralib/l5scaffold/zipball/2c6741d4d9cb82216b386f33757b5c2ed2c2df07",
+                "reference": "2c6741d4d9cb82216b386f33757b5c2ed2c2df07",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laralib\\L5scaffold\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fernando Brito",
+                    "email": "fernandobritofl@gmail.com"
+                }
+            ],
+            "description": "Extend Laravel 5's generators scaffold.",
+            "keywords": [
+                "generators",
+                "laravel",
+                "laravel5",
+                "scaffold"
+            ],
+            "time": "2016-04-22 18:48:53"
         },
         {
             "name": "laravel/framework",
@@ -1981,49 +2024,6 @@
             "time": "2015-05-11 14:41:42"
         },
         {
-            "name": "laralib/l5scaffold",
-            "version": "1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laralib/l5scaffold.git",
-                "reference": "2c6741d4d9cb82216b386f33757b5c2ed2c2df07"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laralib/l5scaffold/zipball/2c6741d4d9cb82216b386f33757b5c2ed2c2df07",
-                "reference": "2c6741d4d9cb82216b386f33757b5c2ed2c2df07",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Laralib\\L5scaffold\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fernando Brito",
-                    "email": "fernandobritofl@gmail.com"
-                }
-            ],
-            "description": "Extend Laravel 5's generators scaffold.",
-            "keywords": [
-                "generators",
-                "laravel",
-                "laravel5",
-                "scaffold"
-            ],
-            "time": "2016-04-22 18:48:53"
-        },
-        {
             "name": "mockery/mockery",
             "version": "0.9.5",
             "source": {
@@ -3248,7 +3248,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "laralib/l5scaffold": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
