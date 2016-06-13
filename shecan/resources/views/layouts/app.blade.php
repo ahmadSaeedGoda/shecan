@@ -52,7 +52,7 @@
 <nav class="navigation navigation-header" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#" style="color: cornsilk;">SheCan</a>
+            <a class="navbar-brand" href="/" style="color: cornsilk;">SheCan</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="{{URL::asset('/login')}}" style="color: floralwhite;">LOGIN</a></li>
