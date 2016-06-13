@@ -43,5 +43,5 @@ Route::get('verify/{token?}', [
 ]);
 
 
-
+Route::resource("company","CompanyController");
 
