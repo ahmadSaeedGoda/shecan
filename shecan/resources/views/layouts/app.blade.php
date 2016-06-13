@@ -54,9 +54,21 @@
         <div class="navbar-header">
             <a class="navbar-brand" href="/" style="color: cornsilk;">SheCan</a>
         </div>
-        <ul class="nav navbar-nav navbar-right">
+         <ul class="nav navbar-nav navbar-right">
+         @if (Auth::guest())
             <li><a href="{{URL::asset('/login')}}" style="color: floralwhite;">LOGIN</a></li>
-            <li><a href="{{URL::asset('/register')}}" style="color: floralwhite;">SIGN UP</a></li>
+            <li><a href="{{URL::asset('/register')}}" style="color: floralwhite;">SIGN UP</a></li>      
+       @else
+       <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                            </ul>
+                        </li>
+                    @endif
         </ul>
     </div>
 </nav>
