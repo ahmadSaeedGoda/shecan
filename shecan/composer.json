@@ -9,7 +9,8 @@
         "laravel/framework": "5.2.*",
         "edvinaskrucas/laravel-user-email-verification": "^1.0",
         "laralib/l5scaffold": "dev-master",
-        "soundasleep/html2text": "^0.3.4"
+        "soundasleep/html2text": "^0.3.4",
+        "pusher/pusher-php-server": "2.2.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

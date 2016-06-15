@@ -48,3 +48,11 @@ Route::resource("company","CompanyController");
 Route::get('/job', 'JobController@create');
 Route::post('/job', 'JobController@store');
 
+Route::get('/notification', function () {
+    return view('notification');
+});
+
+Route::resource('items', 'ItemController',
+    ['except' => ['create', 'edit']]);
+
+
