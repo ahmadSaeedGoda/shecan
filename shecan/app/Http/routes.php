@@ -44,4 +44,7 @@ Route::get('verify/{token?}', [
 
 
 Route::resource("company","CompanyController");
+//Route::resource("job","JobController");
+Route::get('/job', 'JobController@create');
+Route::post('/job', 'JobController@store');
 
