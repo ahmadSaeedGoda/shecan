@@ -15,10 +15,15 @@ class ItemController extends Controller
     {
         $uncompletedItems = Item::where('isCompleted', 0)->get();
         $completedItems = Item::where('isCompleted', 1)->get();
-
+        $unread=count($uncompletedItems);
+        // echo $unread;        
+     
         $data = ['uncompletedItems' => $uncompletedItems,
-            'completedItems' => $completedItems];
-
+            'completedItems' => $completedItems,'$unread'=>$unread];
+            //  echo "<pre>";   
+            // var_dump($data);
+            // echo "</pre>";
+            //  die();
         return view('item.index', $data);
     }
 
@@ -55,8 +60,9 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $item = Item::find($id);
-	$item->isCompleted = (bool) $request->isCompleted;
+        $item->isCompleted = (bool) $request->isCompleted;
         $item->save();
         return;
     }

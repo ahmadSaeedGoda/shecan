@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>shecan</title>
+    <title>Todo App</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-offset-4 col-sm-4">
-                <h1 class="text-center">Notification List</h1>
+                <h1 class="text-center">Todo App</h1>
                 <form id="addFrm" role="form">
                     <div class="form-group">
                         <input type="text" class="form-control" name="title"  id="title" required="required" placeholder="Enter title">
@@ -53,6 +53,6 @@
     <script>
         var pusher = new Pusher('{{ env('PUSHER_KEY') }}');
     </script>
-    <script src="js/pusher.js"></script>
+ <script src="js/pusher.js"></script>
   </body>
 </html>

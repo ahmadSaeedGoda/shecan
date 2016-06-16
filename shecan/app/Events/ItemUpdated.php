@@ -35,3 +35,4 @@ class ItemUpdated extends Event implements ShouldBroadcast
     {
         return ['itemAction'];
     }
+}

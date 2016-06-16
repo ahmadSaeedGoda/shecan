@@ -71,14 +71,22 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <span  class="fa fa-btn fa-bell" class="caret"></span>
+                                <div  class="fa fa-btn fa-bell" class="caret">
+                                    <!-- unread notifications -->
+                                    <span class="badge">{{ DB::table('items')->where('isCompleted', 0)->count()}}
+                                    </span>
+                                </div>
                             </a>
                             <!--  added notification-->
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <div id="itemsList" style="width:200px;">                                
+                                
+                                </div> 
+                                
                             </ul>
                         
                         </li>
+
                     @endif
         </ul>
     </div>
@@ -118,6 +126,22 @@
 <!-- Magnific Popup core JS file -->
 <script src="{{URL::asset('js/jquery.magnific-popup.js')}}"></script>
 <script src="{{URL::asset('js/jasny-bootstrap.min.js')}}"></script>
+<!-- notifications-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $( 'meta[name="csrf-token"]' ).attr( 'content' )
+            }
+        });
+    </script>
+    <script src="js/appnotification.js"></script>
+    <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+    <script>
+        var pusher = new Pusher('{{ env('PUSHER_KEY') }}');
+    </script>
+    <script src="js/pusher.js"></script>
+
 
 @yield('script')
 
