@@ -67,7 +67,7 @@
 
                 <div class="col-sm-4 wow fadeInDown text-center">
                     <img class="rotate" src="img/icon/tweet.svg" alt="Generic placeholder image">
-                    <h3>Follow Me</h3>
+                    <h3><a href ="{{ url('/industries') }}"> Follow Indestry</a></h3>
                     <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla
                         congolium sic ad nauseum. </p>
 

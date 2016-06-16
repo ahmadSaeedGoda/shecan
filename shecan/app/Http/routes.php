@@ -64,3 +64,11 @@ Route::post('/acceptJobs','JobController@acceptJobs');
 Route::post('/notAcceptJobs','JobController@notAcceptJobs');
 
 
+Route::get('/notification', function () {
+    return view('notification');
+});
+
+Route::resource('items', 'ItemController',
+    ['except' => ['create', 'edit']]);
+
+
