@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::auth();
 Route::resource("industries","IndustryController");
 Route::get('admin/profile', ['middleware' => 'admin', function () {  
@@ -47,6 +48,21 @@ Route::resource("company","CompanyController");
 //Route::resource("job","JobController");
 Route::get('/job', 'JobController@create');
 Route::post('/job', 'JobController@store');
+// Route::post('/tag', 'TagController@check');
+// Route::post('/tag',function(){
+// 	return "hello";
+// });
+// show job
+Route::get('/show', 'JobController@show');
+// search job
+Route::post('/search', 'JobController@search');
+// Accepted job
+Route::post('/acceptJobs','JobController@acceptJobs');
+// Route::post('/acceptJobs',function(){
+// 	return "hello";
+// });
+Route::post('/notAcceptJobs','JobController@notAcceptJobs');
+
 
 Route::get('/notification', function () {
     return view('notification');

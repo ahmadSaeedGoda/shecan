@@ -8,6 +8,7 @@
 
     <title>She Can</title>
 
+
     <!-- Bootstrap core CSS -->
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/jasny-bootstrap.min.css')}}" rel="stylesheet" media="screen">
@@ -51,13 +52,30 @@
 
 <nav class="navigation navigation-header" role="navigation">
     <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header ">
             <a class="navbar-brand" href="/" style="color: cornsilk;">SheCan</a>
+            <form class="search-form" method="POST" action="/search" >
+                    {{ csrf_field()}}
+                    <div class="col-sm-2">
+                        <SELECT name="element" id="element" class="form-control" >choose your field
+                            <OPTION >choose your field</OPTION>
+                            <OPTION name="All">All</OPTION>
+                            <OPTION name="country">country</OPTION>
+                            <OPTION name="job_title">job_title</OPTION>
+                            <OPTION name="field">field</OPTION>
+                        </SELECT>
+                    </div>
+                    <div class="col-md-3">    
+                        <input type="text"  id="search"class="form-control"placeholder="search" name="search"/>
+                        <button type="submit" value="search"/>search
+                    </div>   
+            </form>        
         </div>
          <ul class="nav navbar-nav navbar-right">
          @if (Auth::guest())
             <li><a href="{{URL::asset('/login')}}" style="color: floralwhite;">LOGIN</a></li>
             <li><a href="{{URL::asset('/register')}}" style="color: floralwhite;">SIGN UP</a></li>      
+            
        @else
        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -89,6 +107,7 @@
 
                     @endif
         </ul>
+        
     </div>
 </nav>
 
@@ -98,6 +117,7 @@
 
         <!-- JavaScript -->
 <script src="{{URL::asset('js/jquery-1.10.2.js')}}"></script>
+
 <script src="{{URL::asset('js/bootstrap.js')}}"></script>
 <script src="{{URL::asset('js/owl.carousel.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
@@ -121,10 +141,13 @@
     new WOW().init();
 </script>
 
-<script src="{{URL::asset('js/classie.js')}}"></script>
-<script src="{{URL::asset('js/uiMorphingButton_inflow.js')}}"></script>
+<!-- <script src="{{URL::asset('js/classie.js')}}"></script>
+<script src="{{URL::asset('js/uiMorphingButton_inflow.js')}}"></script> -->
 <!-- Magnific Popup core JS file -->
-<script src="{{URL::asset('js/jquery.magnific-popup.js')}}"></script>
+<!-- <script src="{{URL::asset('js/jquery.magnific-popup.js')}}"></script> -->
+{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+<script  src="{{ URL::asset('js/jquery.min.js')}}" ></script>
+  <!--   // <script src="{{ URL::asset('js/script.js')}}" ></script>  -->
 <script src="{{URL::asset('js/jasny-bootstrap.min.js')}}"></script>
 <!-- notifications-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -141,6 +164,7 @@
         var pusher = new Pusher('{{ env('PUSHER_KEY') }}');
     </script>
     <script src="js/pusher.js"></script>
+
 
 
 @yield('script')

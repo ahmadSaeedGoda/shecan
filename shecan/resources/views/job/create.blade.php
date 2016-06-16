@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Title</label>
+                                <label class="col-md-4 control-label">City</label>
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control" name="city" value="{{ old('title') }}">
@@ -102,7 +102,19 @@
                                 </div>
                             </div>
 
+                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                                <label class="col-md-4 control-label">tag</label>
 
+                                <div class="col-md-6">
+                                    <input type="text" id="tag" class="form-control"data-rowtok="{{ csrf_token() }}" name="name" value="{{ old('name') }}">
+
+                                    @if ($errors->has('name'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
@@ -112,9 +124,17 @@
                                 </div>
                             </div>
                         </form>
+                 
                     </div>
                 </div>
             </div>
         </div>
     </div>
     @endsection
+    @section("scripts")
+        <script  src="{{ URL::asset('js/jquery.min.js')}}" ></script>
+        <script src="{{URL::asset('js/tag.js')}}"></script>
+
+@endsection
+   
+    
