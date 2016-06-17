@@ -54,6 +54,7 @@
     <div class="container">
         <div class="navbar-header ">
             <a class="navbar-brand" href="/" style="color: cornsilk;">SheCan</a>
+            @if (Auth::user())
             <form class="search-form" method="POST" action="/search" >
                     {{ csrf_field()}}
                     <div class="col-sm-2">
@@ -71,6 +72,7 @@
                     </div>   
             </form>        
         </div>
+        @endif
          <ul class="nav navbar-nav navbar-right">
          @if (Auth::guest())
             <li><a href="{{URL::asset('/login')}}" style="color: floralwhite;">LOGIN</a></li>

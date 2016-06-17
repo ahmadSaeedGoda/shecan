@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
+use Auth;
 use App\Industry;
 use App\Job;
 use App\JobTag;
+use App\Follow;
 use App\Tag;
 use App\Item;
+use App\Notification;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -36,8 +40,7 @@ class JobController extends Controller {
 
     public function store(Request $request) {
 
-//        $industry=new \();
-//        return "sdfsdf";
+
         $job = new Job();
         $job->title = $request->get("title");
         $job->company_id = 1;
@@ -46,13 +49,26 @@ class JobController extends Controller {
         $job->country = $request->get("country");
         $job->city = $request->get("city");
 
-//        return var_dump($job->industry_id);
+
         if ($job->save()) {
-            $item = new Item();
-            $item->title = $job->title;
-            $item->job_id = $job->id;
-//            $item->isCompleted = 0;
-            $item->save();
+            
+            $notification= new Notification();
+            $notification->title = $job->title;
+            $notification->job_id = $job->id;
+            $notification->save();
+        }
+        // add notification to user which follow industry in items tabel
+        if ($notification->save()){
+            $follow = Follow::where('industry_id',$job->industry_id )->get()->toArray();
+            foreach ($follow as $f) {
+                $item = new Item();
+                $item->user_id= $f['user_id'];
+                $item->notification_id =$notification->id;
+                $item->save();
+               
+            }
+       
+
         }
         // add tag
         $tag = new Tag();

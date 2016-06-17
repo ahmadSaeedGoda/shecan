@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFollowsTable extends Migration
+class CreateItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateFollowsTable extends Migration
      */
     public function up()
     {
-        Schema::create('follows', function (Blueprint $table) {
+        Schema::create('items', function (Blueprint $table) {
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('industry_id')->unsigned()->index();
-            $table->foreign('industry_id')->references('id')->on('industries')->onDelete('cascade')->onUpdate('cascade');
-
+            $table->integer('notification_id')->unsigned()->index();
+            $table->foreign('notification_id')->references('id')->on('notifications')->onDelete('cascade')->onUpdate('cascade');
+            $table->boolean('isCompleted')->default(false);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateFollowsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('Follow');
+        Schema::drop('items');
     }
 }

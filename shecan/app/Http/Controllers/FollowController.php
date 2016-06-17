@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Follow;
 use Auth;
- use App\Industry;
+use App\Industry;
 
 use App\Http\Requests;
 
@@ -92,8 +92,11 @@ class FollowController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($industry_id)
     {
-        $follow = Follow::findOrFail($id);
+        $matchThese = ['user_id' => Auth::user()->id,'industry_id' => $industry_id];
+        $follow = Follow::where($matchThese)->delete();
+        return redirect('industries');
+
     }
 }
