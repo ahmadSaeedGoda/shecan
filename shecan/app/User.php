@@ -26,4 +26,9 @@ class User extends Authenticatable implements RequiresEmailVerificationContract
     protected $hidden = [
         'password', 'remember_token',
     ];
+    public function item()
+    {
+        
+        return $this->belongsTo('App\Item');
+    }
 }

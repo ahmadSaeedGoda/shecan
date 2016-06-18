@@ -1,4 +1,5 @@
 <ul id="uncompletedItemsList" class="list-group" >
+	
     @foreach ($uncompletedItems as $item)
         @include('item.show')
     @endforeach

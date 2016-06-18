@@ -5,7 +5,7 @@
     <span class="checkbox-inline">
         <label>
             <input type="checkbox" class="isCompleted" value="1" {{ ($item->isCompleted) ? 'checked="checked"' : '' }}>
-            {{ $item->title }}
+            {{ $item->notification->title }}
         </lable>
     </span>
 </li>

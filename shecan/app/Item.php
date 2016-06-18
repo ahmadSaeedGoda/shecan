@@ -9,11 +9,11 @@ class Item extends Model
      public function notification()
     {
     	
-        return $this->hasMany('App\Notification');
+        return $this->belongsTo('App\Notification','notification_id');
     }
 
     public function user()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsTo('App\User','user_id');
     }
 }

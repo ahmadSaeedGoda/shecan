@@ -93,15 +93,16 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 <div  class="fa fa-btn fa-bell" class="caret">
                                     <!-- unread notifications -->
-                                    <span class="badge">{{ DB::table('items')->where('isCompleted', 0)->count()}}
+                                    <?php $matchThese = ['user_id' => Auth::user()->id,'isCompleted' => 0];?>
+                                    <span class="badge">{{ DB::table('items')->where($matchThese)->count()}}
                                     </span>
                                 </div>
                             </a>
                             <!--  added notification-->
                             <ul class="dropdown-menu" role="menu">
-                                <div id="itemsList" style="width:200px;">                                
+                                <li><div id="itemsList" style="width:200px;">                                
                                 
-                                </div> 
+                                </div></li> 
                                 
                             </ul>
                         
@@ -119,7 +120,6 @@
 
         <!-- JavaScript -->
 <script src="{{URL::asset('js/jquery-1.10.2.js')}}"></script>
-
 <script src="{{URL::asset('js/bootstrap.js')}}"></script>
 <script src="{{URL::asset('js/owl.carousel.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
