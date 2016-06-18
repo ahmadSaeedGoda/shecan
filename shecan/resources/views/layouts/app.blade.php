@@ -54,6 +54,7 @@
     <div class="container">
         <div class="navbar-header ">
             <a class="navbar-brand" href="/" style="color: cornsilk;">SheCan</a>
+            @if (Auth::user())
             <form class="search-form" method="POST" action="/search" >
                     {{ csrf_field()}}
                     <div class="col-sm-2">
@@ -71,6 +72,7 @@
                     </div>   
             </form>        
         </div>
+        @endif
          <ul class="nav navbar-nav navbar-right">
          @if (Auth::guest())
             <li><a href="{{URL::asset('/login')}}" style="color: floralwhite;">LOGIN</a></li>
@@ -89,14 +91,23 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                <span  class="fa fa-btn fa-bell" class="caret"></span>
+                                <div  class="fa fa-btn fa-bell" class="caret">
+                                    <!-- unread notifications -->
+                                    <?php $matchThese = ['user_id' => Auth::user()->id,'isCompleted' => 0];?>
+                                    <span class="badge">{{ DB::table('items')->where($matchThese)->count()}}
+                                    </span>
+                                </div>
                             </a>
                             <!--  added notification-->
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><div id="itemsList" style="width:200px;">                                
+                                
+                                </div></li> 
+                                
                             </ul>
                         
                         </li>
+
                     @endif
         </ul>
         
@@ -109,7 +120,6 @@
 
         <!-- JavaScript -->
 <script src="{{URL::asset('js/jquery-1.10.2.js')}}"></script>
-
 <script src="{{URL::asset('js/bootstrap.js')}}"></script>
 <script src="{{URL::asset('js/owl.carousel.js')}}"></script>
 <script src="{{URL::asset('js/script.js')}}"></script>
@@ -141,6 +151,22 @@
 <script  src="{{ URL::asset('js/jquery.min.js')}}" ></script>
   <!--   // <script src="{{ URL::asset('js/script.js')}}" ></script>  -->
 <script src="{{URL::asset('js/jasny-bootstrap.min.js')}}"></script>
+<!-- notifications-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $( 'meta[name="csrf-token"]' ).attr( 'content' )
+            }
+        });
+    </script>
+    <script src="js/appnotification.js"></script>
+    <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+    <script>
+        var pusher = new Pusher('{{ env('PUSHER_KEY') }}');
+    </script>
+    <script src="js/pusher.js"></script>
+
 
 
 @yield('script')

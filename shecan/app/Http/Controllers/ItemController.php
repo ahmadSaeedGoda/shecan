@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 use App\Item;
+use Auth;
+use App\Notification;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,12 +15,12 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $uncompletedItems = Item::where('isCompleted', 0)->get();
+        $matchThese = ['user_id' => Auth::user()->id,'isCompleted' => 0];
+        $uncompletedItems = Item::where($matchThese)->get();
         $completedItems = Item::where('isCompleted', 1)->get();
-
+        $unread=count($uncompletedItems);    
         $data = ['uncompletedItems' => $uncompletedItems,
-            'completedItems' => $completedItems];
-
+            'completedItems' => $completedItems,'$unread'=>$unread];
         return view('item.index', $data);
     }
 
@@ -55,8 +57,9 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $item = Item::find($id);
-	$item->isCompleted = (bool) $request->isCompleted;
+        $item->isCompleted = (bool) $request->isCompleted;
         $item->save();
         return;
     }

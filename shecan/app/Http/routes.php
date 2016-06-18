@@ -18,6 +18,9 @@ Route::get('/', function () {
 
 Route::auth();
 Route::resource("industries","IndustryController");
+Route::resource("follow","FollowController");
+
+
 Route::get('admin/profile', ['middleware' => 'admin', function () {  
     return 'admin';
 }]);
