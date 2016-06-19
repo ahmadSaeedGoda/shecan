@@ -54,6 +54,8 @@ Route::post('/singin', 'CompanyController@login');
 //Route::resource("job","JobController");
 Route::get('/job', 'JobController@create');
 Route::post('/job', 'JobController@store');
+Route::resource("job","JobController");
+
 
 
 // Route::post('/tag', 'TagController@check');

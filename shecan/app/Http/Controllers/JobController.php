@@ -132,5 +132,11 @@ class JobController extends Controller {
         return Job::find($id);
         // return "not change";
     }
+    public function destroy($id)
+    {
+        $job = Job::findOrFail($id);
+        $job->delete();
+        return redirect('/show');        
+    }
 
 }

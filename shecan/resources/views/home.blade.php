@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
 
-                    <li class="menuItem"><a href="#whatis">What is?</a></li>
+                    <li class="menuItem"><a href="#whatis">Industries</a></li>
                     <li class="menuItem"><a href="#useit">Use It</a></li>
                     <li class="menuItem"><a href="#screen">Screenshot</a></li>
                     <li class="menuItem"><a href="#credits">Credits</a></li>
@@ -58,8 +58,8 @@
         <div class="container">
 
             <div class="col-md-6 col-md-offset-3 text-center wrap_title">
-                <h2>What is?</h2>
-                <p class="lead" style="margin-top:0">A special thanks to Death.</p>
+                <h2>Industries</h2>
+                <p class="lead" style="margin-top:0">FOllow differient industry.</p>
 
             </div>
 

@@ -19,8 +19,6 @@
                         <tr>
                             <th>ID</th>
                             <th>NAME</th>
-                            <th> follow form </th>
-                            <th>un follow</th>
                             <th class="text-right">OPTIONS</th>
                         </tr>
                     </thead>
@@ -31,7 +29,7 @@
                                 <td>{{$industry->id}}</td>
                                 <td>{{$industry->name}}</td>
                                 <!-- <button  class="btn btn-xs btn-success" data-text-swap="un follow" data-id="{{$industry->id}}">follow</button> -->
-                                <td><form action="{{ route('follow.store') }}" method="POST" style="display: inline;" >
+                                <!-- <td><form action="{{ route('follow.store') }}" method="POST" style="display: inline;" >
                                         <input type="hidden" name="_method" value="POST">
                                         <input type="hidden" name="industry_id" value="{{$industry->id}}">
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -43,7 +41,7 @@
                                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                         <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> un follow</button>
                                     </form>
-                                </td> 
+                                </td>  -->
 
 
                                 <td class="text-right">

@@ -13,6 +13,6 @@ class Job extends Model
 
        public function industeries()
     {
-        return $this->belongsTo('App\Industry');
+        return $this->belongsTo('App\Industry','industry_id');
     }
 }

@@ -2,6 +2,13 @@
 @section('header')
    
     <script  src="{{ URL::asset('js/jquery.min.js')}}" ></script>
+     <div class="page-header clearfix">
+        <h1>
+            <i class="glyphicon glyphicon-align-justify"></i> Jobs Ads
+            <!-- <a class="btn btn-success pull-right" href="{{ route('industries.create') }}"><i class="glyphicon glyphicon-plus"></i> Create</a> -->
+        </h1>
+
+    </div>
     
 @endsection
 
@@ -21,7 +28,7 @@
                         <th>DESCRIPTION</th>
                         <th>FIELD</th>
                         <th>Accepted</th>
-                        <!-- <th class="text-right">OPTIONS</th> -->
+                        <th>Actions</th>
                         </tr>
                     </thead>
 
@@ -31,9 +38,9 @@
                                 <!-- <td>{{$job->id}}</td> -->
                                 <td>{{$job->country}}</td>
                                 <td>{{$job->city}}</td>
-                                <td>{{$job->job_title}}</td>
+                                <td>{{$job->title}}</td>
                                 <td>{{$job->description}}</td>
-                                <td>{{$job->field}}</td>
+                                <td>{{$job->industeries->name}}</td>
                                 <td>
                                 @if($job->Publish)
                                  <input type="checkbox" data-rowtok="{{ csrf_token() }}" data-rowid="{{ $job->id }}" class="is_accepted" id="accepted" name="accepted" checked>
@@ -41,7 +48,12 @@
                                  <input type="checkbox" data-rowtok="{{ csrf_token() }}" data-rowid="{{ $job->id }}" class="is_accepted" id="accepted" name="accepted">
                                  @endif
                                  </td>
-                                <td class="text-right">
+                                <!-- <td class="text-right"> -->
+                                <td><form action="{{ route('job.destroy', $job->id) }}" method="POST" style="display: inline;" onsubmit="if(confirm('Delete? Are you sure?')) { return true } else {return false };">
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-xs btn-danger"><i class="glyphicon glyphicon-trash"></i> Delete</button>
+                                    </form> </td>
                                
                             </tr>
                         @endforeach
