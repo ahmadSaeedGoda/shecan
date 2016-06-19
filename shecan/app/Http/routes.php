@@ -22,9 +22,13 @@ Route::resource("follow","FollowController");
 Route::post("/foll","FollowController@add");
 
 
-Route::get('admin/profile', ['middleware' => 'admin', function () {  
-    return 'admin';
-}]);
+// Route::get('admin/profile', ['middleware' => 'admin', function () {  
+//     return 'admin';
+// }]);
+
+Route::get('/industries', ['middleware' => ['auth','admin'], 'as' => 'industries.index', 'uses' => 'IndustryController@index']);
+Route::get('/show', ['middleware' => ['auth','admin'], 'as' => 'job.show', 'uses' => 'JobController@show']);
+
 
 Route::get('/home', 'HomeController@index');
 

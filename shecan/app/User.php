@@ -31,4 +31,8 @@ class User extends Authenticatable implements RequiresEmailVerificationContract
         
         return $this->belongsTo('App\Item');
     }
+    public function isAdmin()
+    {
+        return $this->isAdmin;
+    } 
 }
