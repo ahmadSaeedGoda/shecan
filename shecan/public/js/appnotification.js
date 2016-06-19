@@ -35,7 +35,7 @@ function removeItem( id ) {
     $( document ).on( "change", ".isCompleted", function() {
         var id = $( this ).closest( 'li' ).data( 'id' );
         var isCompleted = $( this ).prop( "checked" ) ? 1 : 0;
-
+        console.log('update');
         $.ajax( '/items/' + id, {
             data: { "isCompleted": isCompleted },
             method: 'PATCH',
@@ -44,7 +44,10 @@ function removeItem( id ) {
                 removeItem( id );
                 addItem( id, isCompleted );
 
-            }
+            },
+            error: function (error) {
+                  alert('error' + eval(error));
+              }
         });
     });
 

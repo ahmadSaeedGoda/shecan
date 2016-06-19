@@ -23,7 +23,15 @@
                        @if($errors->has("name"))
                         <span class="help-block">{{ $errors->first("name") }}</span>
                        @endif
-                    </div>
+                </div>
+
+                <div class="form-group">
+                            <label for="image-field">image</label>                            
+                                <input type="file" name="image" class="form-control"/>
+                            
+                </div>
+
+
                 <div class="well well-sm">
                     <button type="submit" class="btn btn-primary">Create</button>
                     <a class="btn btn-link pull-right" href="{{ route('industries.index') }}"><i class="glyphicon glyphicon-backward"></i> Back</a>

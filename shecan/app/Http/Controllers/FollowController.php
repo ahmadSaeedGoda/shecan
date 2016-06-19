@@ -45,9 +45,20 @@ class FollowController extends Controller
         $Follow->user_id= Auth::user()->id;
         $Follow->industry_id=$request->input("industry_id");
         $Follow->save();
-        return redirect('industries');
+        return redirect('home');
 
     }
+    public function add(Request $request)
+    {
+        
+        $Follow=new Follow();
+        $Follow->user_id= Auth::user()->id;
+        $Follow->industry_id=$request->input("industry_id");
+        $Follow->save();
+        // return redirect('home');
+
+    }
+
 
     /**
      * Display the specified resource.
@@ -96,7 +107,7 @@ class FollowController extends Controller
     {
         $matchThese = ['user_id' => Auth::user()->id,'industry_id' => $industry_id];
         $follow = Follow::where($matchThese)->delete();
-        return redirect('industries');
+        return redirect('home');
 
     }
 }

@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Register</div>
+                    <div class="panel-heading">Create job</div>
                     <div class="panel-body">
                         <form class="form-horizontal" enctype="multipart/form-data" role="form" method="POST" action="{{ url('/job') }}">
                             {{ csrf_field() }}

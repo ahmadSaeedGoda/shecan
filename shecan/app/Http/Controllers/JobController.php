@@ -84,7 +84,7 @@ class JobController extends Controller {
         $job_tag->save();
 
         
-        return $item->id;
+        return redirect('home');
     }
     public function check(){
         echo "string";die();

@@ -74,10 +74,27 @@
         </div>
         @endif
          <ul class="nav navbar-nav navbar-right">
-         @if (Auth::guest())
-            <li><a href="{{URL::asset('/login')}}" style="color: floralwhite;">LOGIN</a></li>
-            <li><a href="{{URL::asset('/register')}}" style="color: floralwhite;">SIGN UP</a></li>      
-            
+         @if (Auth::guest())             
+             <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: floralwhite;">
+                                 SIGN UP <span class="caret"></span>
+                            </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ url('/register') }}"><i class="fa fa-btn fa-user"></i> Personal</a></li>
+                    <li><a href="{{ url('/company') }}"><i class="fa fa-btn  fa-university"></i>Company</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: floralwhite;">
+                                 Login <span class="caret"></span>
+                            </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ url('/login') }}"><i class="fa fa-btn fa-user"></i> Personal</a></li>
+                    <li><a href="{{ url('/singin') }}"><i class="fa fa-btn  fa-university"></i>Company</a></li>
+
+                </ul>
+            </li>
        @else
        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -152,7 +169,7 @@
   <!--   // <script src="{{ URL::asset('js/script.js')}}" ></script>  -->
 <script src="{{URL::asset('js/jasny-bootstrap.min.js')}}"></script>
 <!-- notifications-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
 <script>
         $.ajaxSetup({
             headers: {

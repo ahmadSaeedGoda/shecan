@@ -39,8 +39,24 @@ class IndustryController extends Controller {
 	public function store(Request $request)
 	{
 		$industry = new Industry();
-
+		// var_dump($request); die();
 		$industry->name = $request->input("name");
+		// Input::file('image')->move(public_path() . '/upload/industry', $name);
+
+		// if (Input::file('image')) {
+  //           $file = array('image' => Input::file('image'));
+  //           $rules = array('image' => 'image|max:500');
+  //           $validator = Validator::make($file, $rules);
+  //           if ($validator->fails()) {
+
+  //               return back()->withErrors($validator);
+  //           } else {
+  //               $ex = Input::file('image')->getClientOriginalExtension();
+  //               $name = $industry->name . '.' . $ex;
+  //               Input::file('image')->move(public_path() . '/upload/industry', $name);
+  //               // $company->image = '/upload/' . $name;
+  //           }
+  //       }
 
 		$industry->save();
 

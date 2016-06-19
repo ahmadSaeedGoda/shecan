@@ -17,6 +17,10 @@ class CompanyController extends Controller {
     public function index() {
         return view('company.register');
     }
+    public function singin() {
+        return view('company.login');
+    }
+
 
     public function create() {
         return view('company.register');
@@ -54,6 +58,19 @@ class CompanyController extends Controller {
 
 //           return var_dump($company->body);
         $company->save();
+        return redirect('job');
+    }
+    public function login(Request $request) {
+        $company = new Company();
+        $matchThese = ['email' =>$request->get("email"),'password' => bcrypt($request->get("password"))];
+        var_dump($matchThese); die();
+        $company = Company::where($matchThese)->get();
+        if (count($company)==1){
+            return redirect('home');
+        }
+        else 
+            return redirect('back');
+        
     }
 
 }

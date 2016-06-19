@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::auth();
 Route::resource("industries","IndustryController");
 Route::resource("follow","FollowController");
+Route::post("/foll","FollowController@add");
 
 
 Route::get('admin/profile', ['middleware' => 'admin', function () {  
@@ -48,9 +49,13 @@ Route::get('verify/{token?}', [
 
 
 Route::resource("company","CompanyController");
+Route::get('/singin', 'CompanyController@singin');
+Route::post('/singin', 'CompanyController@login');
 //Route::resource("job","JobController");
 Route::get('/job', 'JobController@create');
 Route::post('/job', 'JobController@store');
+
+
 // Route::post('/tag', 'TagController@check');
 // Route::post('/tag',function(){
 // 	return "hello";

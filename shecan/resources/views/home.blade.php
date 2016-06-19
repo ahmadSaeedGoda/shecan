@@ -64,61 +64,32 @@
             </div>
 
             <div class="row">
-
+                <?php $industries=DB::table('industries')->get(); ?>
+                @foreach($industries as $industry)
                 <div class="col-sm-4 wow fadeInDown text-center">
                     <img class="rotate" src="img/icon/tweet.svg" alt="Generic placeholder image">
-                    <h3><a href ="{{ url('/industries') }}"> Follow Indestry</a></h3>
-                    <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla
-                        congolium sic ad nauseum. </p>
+                    <h3><a href ="{{ url('/industries') }}"> {{$industry->name}}</a></h3>
+                    <!-- <button type="submit" class="btn btn-xm  btn-primary" data-text-swap="un follow" id="follow" data-rowtok="{{ csrf_token() }}" data-rowid="{{ $industry->id }}" ><i class=" fa fa-btn star "></i>follow</button> -->
+
+                    <p class="lead"><form action="{{ route('follow.store') }}" method="POST" style="display: inline;" >
+                                        <input type="hidden" name="_method" value="POST">
+                                        <input type="hidden" name="industry_id" value="{{$industry->id}}">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <button type="submit" class="btn btn-xm  btn-primary" data-text-swap="un follow" id="follow"><i class=" fa fa-btn star "></i>follow</button>
+                                    </form></p>
 
                     <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
                 </div><!-- /.col-lg-4 -->
-
-                <div class="col-sm-4 wow fadeInDown text-center">
-                    <img class="rotate" src="img/icon/picture.svg" alt="Generic placeholder image">
-                    <h3>Gallery</h3>
-                    <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla
-                        congolium sic ad nauseum. </p>
-                    <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
-                </div><!-- /.col-lg-4 -->
-
-                <div class="col-sm-4 wow fadeInDown text-center">
-                    <img class="rotate" src="img/icon/retina.svg" alt="Generic placeholder image">
-                    <h3>Retina</h3>
-                    <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla
-                        congolium sic ad nauseum. </p>
-                    <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
-                </div><!-- /.col-lg-4 -->
-
+                 @endforeach
+                
             </div><!-- /.row -->
 
-            <div class="row tworow">
+            <!-- <div class="row tworow">
 
-                <div class="col-sm-4  wow fadeInDown text-center">
-                    <img class="rotate" src="img/icon/laptop.svg" alt="Generic placeholder image">
-                    <h3>Responsive</h3>
-                    <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla
-                        congolium sic ad nauseum. </p>
-                    <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
-                </div><!-- /.col-lg-4 -->
+                
 
-                <div class="col-sm-4 wow fadeInDown text-center">
-                    <img class="rotate" src="img/icon/map.svg" alt="Generic placeholder image">
-                    <h3>Google</h3>
-                    <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla
-                        congolium sic ad nauseum. </p>
-                    <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
-                </div><!-- /.col-lg-4 -->
-
-                <div class="col-sm-4 wow fadeInDown text-center">
-                    <img class="rotate" src="img/icon/browser.svg" alt="Generic placeholder image">
-                    <h3>Bootstrap</h3>
-                    <p class="lead">Epsum factorial non deposit quid pro quo hic escorol. Olypian quarrels et gorilla
-                        congolium sic ad nauseum. </p>
-                    <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
-                </div><!-- /.col-lg-4 -->
-
-            </div><!-- /.row -->
+                
+            </div><!-- /.row --> 
         </div>
     </div>
 
