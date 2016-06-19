@@ -8,7 +8,11 @@ class Job extends Model
 {
      public function job_tags()
     {
-    	
         return $this->belongsTo('App\JobTag');
+    }
+
+       public function industeries()
+    {
+        return $this->belongsTo('App\Industry');
     }
 }

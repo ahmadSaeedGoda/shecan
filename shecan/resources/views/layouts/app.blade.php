@@ -59,7 +59,7 @@
                     {{ csrf_field()}}
                     <div class="col-sm-2">
                         <SELECT name="element" id="element" class="form-control" >choose your field
-                            <OPTION >choose your field</OPTION>
+                            <OPTION ></OPTION>
                             <OPTION name="All">All</OPTION>
                             <OPTION name="country">country</OPTION>
                             <OPTION name="job_title">job_title</OPTION>
