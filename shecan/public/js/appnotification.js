@@ -46,7 +46,7 @@ function removeItem( id ) {
 
             },
             error: function (error) {
-                  alert('error' + eval(error));
+                console.log('error' + eval(error));
               }
         });
     });

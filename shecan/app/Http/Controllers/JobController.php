@@ -20,6 +20,13 @@ class JobController extends Controller {
         return view('job.index');
     }
 
+    //using to show notification then edit it 
+    public function  edit($id){
+        $job = Job::findOrFail($id);
+        return view('job.jobNotification', compact('job'));     
+
+    }
+
     public function create() {
         $industries = Industry::all();
         return view('job.create')->withIndustries($industries);

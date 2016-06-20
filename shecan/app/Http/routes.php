@@ -22,11 +22,11 @@ Route::resource("follow","FollowController");
 Route::post("/foll","FollowController@add");
 
 
-// Route::get('admin/profile', ['middleware' => 'admin', function () {  
-//     return 'admin';
-// }]);
 
 Route::get('/industries', ['middleware' => ['auth','admin'], 'as' => 'industries.index', 'uses' => 'IndustryController@index']);
+Route::get('/industries/create', ['middleware' => ['auth','admin'], 'as' => 'industries.create', 'uses' => 'IndustryController@create']);
+Route::get('/industries/{industries}/edit', ['middleware' => ['auth','admin'], 'as' => 'industries.show', 'uses' => 'IndustryController@show']);
+Route::get('/industries/{industries}', ['middleware' => ['auth','admin'], 'as' => 'industries.edit', 'uses' => 'IndustryController@edit']);
 Route::get('/show', ['middleware' => ['auth','admin'], 'as' => 'job.show', 'uses' => 'JobController@show']);
 
 
@@ -55,9 +55,11 @@ Route::get('verify/{token?}', [
 Route::resource("company","CompanyController");
 Route::get('/singin', 'CompanyController@singin');
 Route::post('/singin', 'CompanyController@login');
-//Route::resource("job","JobController");
+
 Route::get('/job', 'JobController@create');
 Route::post('/job', 'JobController@store');
+// Route::get('/job/showjob', 'JobController@showjob');
+
 Route::resource("job","JobController");
 
 
@@ -70,6 +72,7 @@ Route::resource("job","JobController");
 Route::get('/show', 'JobController@show');
 // search job
 Route::post('/search', 'JobController@search');
+
 // Accepted job
 Route::post('/acceptJobs','JobController@acceptJobs');
 // Route::post('/acceptJobs',function(){

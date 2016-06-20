@@ -11,4 +11,9 @@ class Notification extends Model
     	
         return $this->belongsTo('App\Item');
     }
+    public function jobs()
+    {
+    	
+        return $this->belongsTo('App\Job','job_id');
+    }
 }

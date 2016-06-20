@@ -5,7 +5,7 @@
     <span class="checkbox-inline">
         <label>
             <input type="checkbox" class="isCompleted" value="1" {{ ($item->isCompleted) ? 'checked="checked"' : '' }}>
-            {{ $item->notification->title }}
+            <a href="/job/{{ $item->notification->jobs->id}}/edit">{{ $item->notification->title }}</a>
         </lable>
     </span>
 </li>
