@@ -42,6 +42,42 @@ Route::get('verify/{token?}', [
     'as' => 'verification.verify',
 ]);
 
+Route::group(['prefix' => 'cv'],function(){
+
+    Route::get('/', 'CvController@index');
+
+    Route::get('/new',function(){
+        return view('cv.newcv');
+    });
+    
+    Route::post('/new','CvController@newCv');
+
+    Route::group(['prefix' => '{id}'],function(){
+        Route::get('/','CvController@userCV');
+
+        Route::get('/personal/', 'CvController@personalInfo');
+        Route::post('/personal/', 'CvController@AddPersonalInfo');
+
+        Route::get('/summary','CvController@summaryInfo');
+        Route::post('/summary','CvController@AddSummaryInfo');
+
+        Route::get('/work','CvController@workInfo');
+        Route::post('/work','CvController@AddWorkInfo');
+
+        Route::get('/education', 'CvController@educationInfo');
+        Route::post('/education', 'CvController@AddEducationInfo');
+
+        Route::get('/skills', 'CvController@skillsInfo');
+        Route::post('/skills', 'CvController@AddSkillsInfo');
+
+        Route::get('/text', 'CvController@textInfo');
+        Route::post('/text', 'CvController@AddTextInfo');
+
+    });
+
+
+});
+
 
 
 

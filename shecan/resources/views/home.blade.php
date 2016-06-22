@@ -14,7 +14,7 @@
             <h3 class="h3_home wow fadeIn" data-wow-delay="0.6s">Create a standout resume in minutes.
                 Easily create professional resumes, online portfolios and personal landing pages</h3>
             <ul class="list-inline intro-social-buttons">
-                <li><a href="#" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s">START CV</a>
+                <li><a href="/cv" class="btn  btn-lg mybutton_cyano wow fadeIn" data-wow-delay="0.8s">START CV</a>
                 </li>
             </ul>
         </div>

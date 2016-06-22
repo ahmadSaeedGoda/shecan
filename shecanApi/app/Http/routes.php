@@ -18,4 +18,12 @@ Route::get('/', function () {
 Route::group(['prefix' => 'api/v1'], function(){
     Route::resource('cvs', 'CvController');
     Route::get('cvs/user/{cvs}','CvController@getByUser');
+    Route::post('cvs/profile/{id}','CvController@storeProfile');
+    Route::post('cvs/summary/{id}','CvController@storeSummary');
+    Route::post('cvs/work/{id}','CvController@storeWork');
+    Route::post('cvs/education/{id}','CvController@storeEducation');
+    Route::post('cvs/skills/{id}','CvController@storeSkills');
+    Route::post('cvs/text/{id}','CvController@storeText');
+    
 });
+
