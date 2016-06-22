@@ -75,4 +75,12 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    // added to rediect admin to Dashboard
+    protected function authenticated($request, $user)
+    {
+        if($user->isAdmin) {
+            return redirect()->intended('/industries');
+        }
+        return redirect()->intended('/');
+    }
 }

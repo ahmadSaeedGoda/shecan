@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCompanysTable extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,11 @@ class CreateCompanysTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tags', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -22,6 +26,7 @@ class CreateCompanysTable extends Migration
      */
     public function down()
     {
-        //
+         Schema::drop('tags');
+
     }
 }

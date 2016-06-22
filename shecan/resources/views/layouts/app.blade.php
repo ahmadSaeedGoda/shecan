@@ -8,6 +8,7 @@
 
     <title>She Can</title>
 
+
     <!-- Bootstrap core CSS -->
     <link href="{{URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{URL::asset('css/jasny-bootstrap.min.css')}}" rel="stylesheet" media="screen">
@@ -51,13 +52,49 @@
 
 <nav class="navigation navigation-header" role="navigation">
     <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header ">
             <a class="navbar-brand" href="/" style="color: cornsilk;">SheCan</a>
+            @if (Auth::user())
+            <form class="search-form" method="POST" action="/search" >
+                    {{ csrf_field()}}
+                    <div class="col-sm-2">
+                        <SELECT name="element" id="element" class="form-control" >choose your field
+                            <OPTION ></OPTION>
+                            <OPTION name="All">All</OPTION>
+                            <OPTION name="country">country</OPTION>
+                            <OPTION name="job_title">job_title</OPTION>
+                            <OPTION name="field">field</OPTION>
+                        </SELECT>
+                    </div>
+                    <div class="col-md-3">    
+                        <input type="text"  id="search"class="form-control"placeholder="search" name="search"/>
+                        <button type="submit" value="search"/>search
+                    </div>   
+            </form>        
         </div>
+        @endif
          <ul class="nav navbar-nav navbar-right">
-         @if (Auth::guest())
-            <li><a href="{{URL::asset('/login')}}" style="color: floralwhite;">LOGIN</a></li>
-            <li><a href="{{URL::asset('/register')}}" style="color: floralwhite;">SIGN UP</a></li>      
+         @if (Auth::guest())             
+             <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: floralwhite;">
+                                 SIGN UP <span class="caret"></span>
+                            </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ url('/register') }}"><i class="fa fa-btn fa-user"></i> Personal</a></li>
+                    <li><a href="{{ url('/company') }}"><i class="fa fa-btn  fa-university"></i>Company</a></li>
+
+                </ul>
+            </li>
+            <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: floralwhite;">
+                                 Login <span class="caret"></span>
+                            </a>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="{{ url('/login') }}"><i class="fa fa-btn fa-user"></i> Personal</a></li>
+                    <li><a href="{{ url('/singin') }}"><i class="fa fa-btn  fa-university"></i>Company</a></li>
+
+                </ul>
+            </li>
        @else
        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -67,9 +104,30 @@
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
+                        
                         </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <div  class="fa fa-btn fa-bell" class="caret">
+                                    <!-- unread notifications -->
+                                    <?php $matchThese = ['user_id' => Auth::user()->id,'isCompleted' => 0];?>
+                                    <span class="badge">{{ DB::table('items')->where($matchThese)->count()}}
+                                    </span>
+                                </div>
+                            </a>
+                            <!--  added notification-->
+                            <ul class="dropdown-menu" role="menu">
+                                <li><div id="itemsList" style="width:200px;">                                
+                                
+                                </div></li> 
+                                
+                            </ul>
+                        
+                        </li>
+
                     @endif
         </ul>
+        
     </div>
 </nav>
 
@@ -102,11 +160,31 @@
     new WOW().init();
 </script>
 
-<script src="{{URL::asset('js/classie.js')}}"></script>
-<script src="{{URL::asset('js/uiMorphingButton_inflow.js')}}"></script>
+<!-- <script src="{{URL::asset('js/classie.js')}}"></script>
+<script src="{{URL::asset('js/uiMorphingButton_inflow.js')}}"></script> -->
 <!-- Magnific Popup core JS file -->
-<script src="{{URL::asset('js/jquery.magnific-popup.js')}}"></script>
+<!-- <script src="{{URL::asset('js/jquery.magnific-popup.js')}}"></script> -->
+{{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+<script  src="{{ URL::asset('js/jquery.min.js')}}" ></script>
+  <!--   // <script src="{{ URL::asset('js/script.js')}}" ></script>  -->
 <script src="{{URL::asset('js/jasny-bootstrap.min.js')}}"></script>
+<!-- notifications-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> -->
+<script>
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $( 'meta[name="csrf-token"]' ).attr( 'content' )
+            }
+        });
+    </script>
+    <script src="js/appnotification.js"></script>
+    <script src="//js.pusher.com/2.2/pusher.min.js"></script>
+    <script>
+        var pusher = new Pusher('{{ env('PUSHER_KEY') }}');
+    </script>
+    <script src="js/pusher.js"></script>
+
+
 
 @yield('script')
 

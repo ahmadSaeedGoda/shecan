@@ -15,11 +15,20 @@ Route::get('/', function () {
     return view('home');
 });
 
+
 Route::auth();
 Route::resource("industries","IndustryController");
-Route::get('admin/profile', ['middleware' => 'admin', function () {  
-    return 'admin';
-}]);
+Route::resource("follow","FollowController");
+Route::post("/foll","FollowController@add");
+
+
+
+Route::get('/industries', ['middleware' => ['auth','admin'], 'as' => 'industries.index', 'uses' => 'IndustryController@index']);
+Route::get('/industries/create', ['middleware' => ['auth','admin'], 'as' => 'industries.create', 'uses' => 'IndustryController@create']);
+Route::get('/industries/{industries}/edit', ['middleware' => ['auth','admin'], 'as' => 'industries.show', 'uses' => 'IndustryController@show']);
+Route::get('/industries/{industries}', ['middleware' => ['auth','admin'], 'as' => 'industries.edit', 'uses' => 'IndustryController@edit']);
+Route::get('/show', ['middleware' => ['auth','admin'], 'as' => 'job.show', 'uses' => 'JobController@show']);
+
 
 Route::get('/home', 'HomeController@index');
 
@@ -79,5 +88,40 @@ Route::group(['prefix' => 'cv'],function(){
 });
 
 
+Route::resource("company","CompanyController");
+Route::get('/singin', 'CompanyController@singin');
+Route::post('/singin', 'CompanyController@login');
+
+Route::get('/job', 'JobController@create');
+Route::post('/job', 'JobController@store');
+// Route::get('/job/showjob', 'JobController@showjob');
+
+Route::resource("job","JobController");
+
+
+
+// Route::post('/tag', 'TagController@check');
+// Route::post('/tag',function(){
+// 	return "hello";
+// });
+// show job
+Route::get('/show', 'JobController@show');
+// search job
+Route::post('/search', 'JobController@search');
+
+// Accepted job
+Route::post('/acceptJobs','JobController@acceptJobs');
+// Route::post('/acceptJobs',function(){
+// 	return "hello";
+// });
+Route::post('/notAcceptJobs','JobController@notAcceptJobs');
+
+
+Route::get('/notification', function () {
+    return view('notification');
+});
+
+Route::resource('items', 'ItemController',
+    ['except' => ['create', 'edit']]);
 
 

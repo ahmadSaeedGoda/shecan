@@ -2,16 +2,63 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7044150d-9a05-40aa-bdf1-0897c00e7377" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.fuse_hidden00027dcf00000001" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Events/ItemCreated.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Events/ItemDeleted.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Events/ItemUpdated.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Follow.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Http/Controllers/FollowController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Http/Controllers/ItemController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Http/Controllers/JobController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Http/Controllers/TagController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Item.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Job.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/JobTag.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Notification.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/app/Tag.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/database/migrations/2016_06_12_130317_create_companies_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/database/migrations/2016_06_14_084717_create_jobs_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/database/migrations/2016_06_15_120911_create_job_tags_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/database/migrations/2016_06_16_220625_create_follows_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/database/migrations/2016_06_17_120819_create_notifications_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/database/migrations/2016_06_17_130031_create_items_table.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/public/js/appnotification.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/public/js/follow.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/public/js/job.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/public/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/public/js/pusher.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/public/js/tag.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/company/login.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/company/register.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/industries/follow.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/item/index.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/item/show.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/job/create.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/job/jobNotification.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/job/show.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/job/single.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shecan/resources/views/notification.blade.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/shecan/database/migrations/2016_06_12_130317_create_companys_table.php" afterPath="$PROJECT_DIR$/shecan/database/migrations/2016_06_15_105811_create_tags_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Company.php" afterPath="$PROJECT_DIR$/shecan/app/Company.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/shecan/app/Http/Controllers/Auth/AuthController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Http/Controllers/CompanyController.php" afterPath="$PROJECT_DIR$/shecan/app/Http/Controllers/CompanyController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Http/Controllers/IndustryController.php" afterPath="$PROJECT_DIR$/shecan/app/Http/Controllers/IndustryController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/shecan/app/Http/Kernel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Http/Middleware/Admin.php" afterPath="$PROJECT_DIR$/shecan/app/Http/Middleware/Admin.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Http/routes.php" afterPath="$PROJECT_DIR$/shecan/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Industry.php" afterPath="$PROJECT_DIR$/shecan/app/Industry.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/Providers/AppServiceProvider.php" afterPath="$PROJECT_DIR$/shecan/app/Providers/AppServiceProvider.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/app/User.php" afterPath="$PROJECT_DIR$/shecan/app/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/composer.json" afterPath="$PROJECT_DIR$/shecan/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/composer.lock" afterPath="$PROJECT_DIR$/shecan/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/config/app.php" afterPath="$PROJECT_DIR$/shecan/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/public/js/script.js" afterPath="$PROJECT_DIR$/shecan/public/js/script.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/shecan/resources/views/home.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/resources/views/industries/create.blade.php" afterPath="$PROJECT_DIR$/shecan/resources/views/industries/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/resources/views/industries/index.blade.php" afterPath="$PROJECT_DIR$/shecan/resources/views/industries/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/resources/views/layout.blade.php" afterPath="$PROJECT_DIR$/shecan/resources/views/layout.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecanApi/app/Cv.php" afterPath="$PROJECT_DIR$/shecanApi/app/Cv.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecanApi/app/Http/Controllers/CvController.php" afterPath="$PROJECT_DIR$/shecanApi/app/Http/Controllers/CvController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecanApi/app/Http/routes.php" afterPath="$PROJECT_DIR$/shecanApi/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shecan/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/shecan/resources/views/layouts/app.blade.php" />
     </list>
     <ignored path="shecan-project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +80,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CvController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CvController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shecanApi/app/Http/Controllers/CvController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="layout.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/shecan/resources/views/layout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="composer.lock" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/shecan/composer.lock">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,6 +145,8 @@
         <option value="$PROJECT_DIR$/shecan/resources/views/cv/educationform.blade.php" />
         <option value="$PROJECT_DIR$/shecan/resources/views/cv/cv.blade.php" />
         <option value="$PROJECT_DIR$/shecanApi/app/Http/Controllers/CvController.php" />
+        <option value="$PROJECT_DIR$/shecan/composer.json" />
+        <option value="$PROJECT_DIR$/shecan/composer.lock" />
       </list>
     </option>
   </component>
@@ -269,15 +338,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1465643044147</updated>
-      <workItem from="1465643045596" duration="90698000" />
+      <workItem from="1465643045596" duration="90887000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90698000" />
+    <option name="totallyTimeSpent" value="90887000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="63" y="-4" width="1303" height="772" extended-state="7" />
+    <frame x="63" y="-4" width="1303" height="772" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494244" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -381,8 +450,8 @@
         <state relative-caret-position="324">
           <caret line="30" column="38" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
           <folding>
-            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#class#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#class#0;n#a#0;n#li#1;n#ul#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -416,7 +485,7 @@
         <state relative-caret-position="202">
           <caret line="24" column="26" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="26" />
           <folding>
-            <element signature="e#45#58#0#PHP" expanded="true" />
+            <element signature="e#45#58#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -536,14 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shecan/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="73" column="57" selection-start-line="73" selection-start-column="57" selection-end-line="73" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/shecan/resources/views/cv/textform.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -552,14 +613,6 @@
             <marker date="1466301884572" expanded="true" signature="133:263" placeholder="..." />
             <marker date="1466301884572" expanded="true" signature="146:262" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shecan/resources/views/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -645,6 +698,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shecan/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="73" column="56" selection-start-line="73" selection-start-column="56" selection-end-line="73" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shecan/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shecan/resources/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shecan/composer.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
